@@ -112,7 +112,9 @@ app.use(express.static("./public"));
 
 // getting alll cars form database
 app.get("/cars", async (req, res) => {
-  const data = await getAllFromStorage(req.body);
+  const data = await getAllFromStorage();
+  // dublicate will check in client side
+  console.log(req.body);
   res.json(data);
 });
 

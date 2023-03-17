@@ -41,6 +41,7 @@ function add_car() {
   cars.push(newcar);
   // calling the display fucntion
   display(cars);
+  let data;
 }
 
 let discountPrice = function (price) {

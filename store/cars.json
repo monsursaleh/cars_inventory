@@ -86,5 +86,13 @@
         "carOwner": "monsur",
         "carPrice": "5000",
         "carColor": "Black"
+    },
+    {
+        "carLicence": "1",
+        "carMaker": "Skoda",
+        "carModel": "Octavia",
+        "carOwner": "monsur",
+        "carPrice": "5000",
+        "carColor": "Black"
     }
 ]
