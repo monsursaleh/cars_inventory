@@ -125,7 +125,7 @@ app.get("/license/:licenceNum", async (req, res) => {
   // let  = text.slice(12, 19
   const data = await getFromStorage(carLicence);
   console.log(data);
-  res.json({ data });
+  res.json(data);
 });
 
 // creating single object data to teh databse

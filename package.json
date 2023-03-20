@@ -4,8 +4,7 @@
   "description": "car server project a simple crud oepration",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
-    "dev": "nodemon server.js"
+    "start": "node server.js"
   },
   "author": "Monsur Saleh",
   "license": "ISC",

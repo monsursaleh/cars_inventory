@@ -10,7 +10,6 @@ body {
   font-size: 20px;
   line-height: 1.42857143;
   margin: 0;
-  background-color: rgb(169, 165, 124);
 }
 
 table {
@@ -35,8 +34,10 @@ header {
   letter-spacing: 5px;
 
   height: 200px;
-  background-color: black;
+  font-size: 1rem;
+
   justify-content: space-evenly;
+  background: url("https://images.unsplash.com/photo-1553027957-9e9cd2f19e0a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80");
 }
 h1 {
   align-self: center;
@@ -44,7 +45,7 @@ h1 {
 .container {
   display: flex;
   justify-content: center;
-  background-color: black;
+  background: url("https://images.unsplash.com/photo-1532751203793-812308a10d8e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=646&q=80");
   padding: 2vh;
   margin: 5vh;
 }
@@ -117,4 +118,42 @@ section.right {
   box-shadow: none;
   border: none;
   height: 30px;
+}
+
+@media (max-width: 1200px) {
+  .container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  #car-table {
+    max-width: 50vh;
+    width: 40vh;
+  }
+  header {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 1200px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .car-table {
+    bottom: 0px;
+    left: 2vh;
+  }
+  header {
+    flex-direction: column;
+  }
+
+  .button {
+    /* display: flex; */
+    flex-direction: column;
+  }
+}
+
+table {
+  width: 100%;
 }

@@ -14,7 +14,7 @@ const cars = [];
 //car object Construrctor
 
 function CarObj(license, maker, model, owner, price, color) {
-  this.carLicense = license;
+  this.carLicence = license;
   this.carMaker = maker;
   this.carModel = model;
   this.carOwner = owner;
@@ -26,23 +26,24 @@ function CarObj(license, maker, model, owner, price, color) {
 const newcar1 = new CarObj("123456", "Toyota", "Camry", "John", "10000", "red");
 console.log(newcar1);
 
-function add_car() {
-  // All License data input seletor
+function newCarObj() {
   const license = document.querySelector("#license").value;
+
   const maker = document.querySelector("#maker").value;
   const model = document.querySelector("#model").value;
   const owner = document.querySelector("#owner").value;
   const price = document.querySelector("#price").value;
   const color = document.querySelector("#color").value;
+
   // its create a obejct
   const newcar = new CarObj(license, maker, model, owner, price, color);
   newcar.discount = discountPrice(price);
-  //pushing CarObj into cars arry
-  cars.push(newcar);
-  // calling the display fucntion
-  display(cars);
-  let data;
+  console.log(newcar);
+  return newcar;
+  // console.log("car object", newcar);
 }
+
+// adding discountPrice
 
 let discountPrice = function (price) {
   let discountPrice;
@@ -55,8 +56,37 @@ let discountPrice = function (price) {
   }
   return discountPrice;
 };
-// fucntion for display table and disocuted price
 
+// sending new object  to the server
+
+async function sendObj(url = "", data = {}) {
+  const response = await fetch(url, {
+    method: "POST",
+    mode: "cors",
+    cache: "no-cache",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    referrerPolicy: "no-referrer",
+    body: JSON.stringify(data),
+  });
+  return response.json();
+}
+
+// send new car object to server
+function add_car() {
+  const newCar = newCarObj();
+  console.log(newCar);
+  const url = "http://localhost:3007/cars";
+  // res will be alart to the user.
+  sendObj(url, newCar);
+  window.location.reload();
+}
+
+// event lister for car database
+btnSubmit.addEventListener("click", add_car);
+
+// fucntion for display table and disocuted price
 function display(carArr) {
   carArr.forEach(function (car) {
     const html = `
@@ -74,80 +104,67 @@ function display(carArr) {
   });
 }
 
-// event lister for car database
-btnSubmit.addEventListener("click", add_car);
-function reset() {
-  carTable.innerHTML = "";
-}
-btnReset.addEventListener("click", reset);
+// Get cars table
 
-// finding the car by license start from here
-function findCarByLicence() {
-  const search_licence = document.querySelector("#search-license").value;
-  for (const car of cars) {
-    console.log(car["carLicense"]);
-    if (car["carLicense"] === search_licence) {
-      const text = `Car Maker is : ${car.carMaker}, and car Model: ${car.carModel}, Owner: ${car.carOwner}`;
-      searchResult.textContent = text;
-      return;
-    } else {
-      searchResult.textContent = `Car not found now, try later!`;
-    }
-  }
-}
-
-btnSearch.addEventListener("click", findCarByLicence);
-
-async function getAllCars(url) {
+async function getCars(url) {
   const response = await fetch(url, { mode: "cors" });
   const dataCars = await response.json();
   console.log(dataCars);
   display(dataCars);
 }
 
-getAllCars("http://localhost:3007/cars");
+getCars("http://localhost:3007/cars");
 
-// Create a method discount() for the car object that returns a discounted price. The discounted price depends on the price of the car. If the price is over 20 000, the discount is 25%. If it is under 5000, it is 10%. Otherwise, the discount is 15%.
-// Display the discount % and the discount amount in the search
+async function findCarByLicence() {
+  let resultLicencse;
+  const search_licence = document.querySelector("#search-license").value;
 
-//finding the car search can be done with filter
+  let response = await fetch(`http://localhost:3007/license/${search_licence}`);
+  let data = await response.json();
+  console.log(data, typeof data);
+  if (data != null) {
+    resultLicencse = "Car found in database";
+  } else {
+    resultLicencse = "Car not found in database";
+  }
 
-// display table can be done this also for future note
+  searchResult.textContent = resultLicencse;
+}
 
-// let displayTable = function (carArr) {
-//   let table = carArr.forEach(function (car) {
-//     carTable.innerHTML += `
-//             <tr>
-//                 <td>${car.carLicense}</td>
-//                 <td>${car.carMaker}</td>
-//                 <td>${car.carModel}</td>
-//                 <td>${car.carOwner}</td>
-//                 <td>${car.carPrice}</td>
-//                 <td>${car.carColor}</td>
-//             </tr>
-//             `;
-//   });
-//   return table;
-// };
+btnSearch.addEventListener("click", findCarByLicence);
 
-///finding car lincese plate
+// reset
 
-// const findLicense = (event) => {
-//   event.preventDefault();
+function reset() {
+  carTable.innerHTML = "";
+}
 
-//   carObjdata.forEach((car) => {
-//     let searchOut;
-//     if (car.license == inputLicense) {
-//       searchOut = car;
+btnReset.addEventListener("click", reset);
+
+// diffrent method of doing
+
+// const data = fetch(`http://localhost:3007/license/${search_licence}`)
+//   .then((response) => response.json())
+//   .then((jsonData) => {
+//     console.log(jsonData);
+//     if (jsonData == !null) {
+//       resultLicencse = "Car found in database ";
+//     } else {
+//       resultLicencse = "Car not found in database ";
 //     }
 //   });
-//   if (searchOut != undefined) {
-//     licenceOutput.textContent = `Car license ${searchOut.plate} is owned by ${searchOut.owner}`;
-//   } else if (filter === "") {
-//     searchOut.textContent = "Please enter license number";
-//   } else {
-//     searchOut.textContent = "No car was found";
-//   }
-// };
 
-// searchForm.addEventListener("submit", findLicense);
+// finding the car by license start from here
+// function findCarByLicence() {
+//   const search_licence = document.querySelector("#search-license").value;
+//   for (const car of cars) {
+//     console.log(car["carLicence"]);
+//     if (car["carLicence"] === search_licence) {
+//       const text = `Car Maker is : ${car.carMaker}, and car Model: ${car.carModel}, Owner: ${car.carOwner}`;
+//       searchResult.textContent = text;
+//       return;
+//     } else {
+//       searchResult.textContent = `Car not found now, try later!`;
+//     }
+//   }
+// }

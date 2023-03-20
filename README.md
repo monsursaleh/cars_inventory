@@ -28,12 +28,13 @@
 ```bash
 npm install express
 npm i -D nodemon
+or
+node server.js
 
 ```
 
 ## Tech Stack
 
-c
 **Client:** HTML, CSS, JS
 
 **Server:** Node, Express, nodemon
@@ -46,7 +47,7 @@ c
 
 ## Limitation
 
-- Not using any databse
+- Not using any Databse only json store
 - UI/ UX improvemetns
 - Real life data shortage
 

@@ -1,38 +1,6 @@
 [
     {
-        "carLicence": "MSY-123",
-        "carMaker": "Honda",
-        "carModel": "Civic",
-        "carOwner": "Monsur",
-        "carPrice": "13000",
-        "carColor": "Red"
-    },
-    {
-        "carLicence": "ABZ-245",
-        "carMaker": "Toyota",
-        "carModel": "Aygo",
-        "carOwner": "Monsur",
-        "carPrice": "3200",
-        "carColor": "Blue"
-    },
-    {
-        "carLicence": "UUU-999",
-        "carMaker": "BMW",
-        "carModel": "Hybrid",
-        "carOwner": "Monsur",
-        "carPrice": "50000",
-        "carColor": "Black"
-    },
-    {
-        "carLicence": "USZ-100",
-        "carMaker": "Skoda",
-        "carModel": "Octavia",
-        "carOwner": "Mark",
-        "carPrice": "8990",
-        "carColor": "Red"
-    },
-    {
-        "carLicence": "1",
+        "carLicence": "Abz-123",
         "carMaker": "Skoda",
         "carModel": "Octavia",
         "carOwner": "monsur",
@@ -40,7 +8,7 @@
         "carColor": "Black"
     },
     {
-        "carLicence": "1",
+        "carLicence": "msy-123",
         "carMaker": "Skoda",
         "carModel": "Octavia",
         "carOwner": "monsur",
@@ -48,7 +16,7 @@
         "carColor": "Black"
     },
     {
-        "carLicence": "1",
+        "carLicence": "BZ-123",
         "carMaker": "Skoda",
         "carModel": "Octavia",
         "carOwner": "monsur",
@@ -56,7 +24,7 @@
         "carColor": "Black"
     },
     {
-        "carLicence": "1",
+        "carLicence": "BZ-123",
         "carMaker": "Skoda",
         "carModel": "Octavia",
         "carOwner": "monsur",
@@ -64,31 +32,52 @@
         "carColor": "Black"
     },
     {
-        "carLicence": "1",
-        "carMaker": "Skoda",
-        "carModel": "Octavia",
-        "carOwner": "monsur",
-        "carPrice": "5000",
-        "carColor": "Black"
+        "carLicence": "1212",
+        "carMaker": "toyta ",
+        "carModel": "121",
+        "carOwner": "Monsur ",
+        "carPrice": "21332",
+        "carColor": "red",
+        "discount": 15999
     },
     {
-        "carLicence": "test_3",
-        "carMaker": "Skoda",
-        "carModel": "Octavia",
-        "carOwner": "monsur",
-        "carPrice": "5000",
-        "carColor": "Black"
+        "carLicence": "1212",
+        "carMaker": "toyta ",
+        "carModel": "121",
+        "carOwner": "Monsur ",
+        "carPrice": "21332",
+        "carColor": "red",
+        "discount": 15999
     },
     {
-        "carLicence": "test_5",
-        "carMaker": "Skoda",
-        "carModel": "Octavia",
-        "carOwner": "monsur",
-        "carPrice": "5000",
-        "carColor": "Black"
+        "carLicence": "1212",
+        "carMaker": "toyta ",
+        "carModel": "121",
+        "carOwner": "Monsur ",
+        "carPrice": "21332",
+        "carColor": "red",
+        "discount": 15999
     },
     {
-        "carLicence": "1",
+        "carLicence": "444",
+        "carMaker": "toyta ",
+        "carModel": "toyta ",
+        "carOwner": "John",
+        "carPrice": "33333",
+        "carColor": "red",
+        "discount": 24999.75
+    },
+    {
+        "carLicence": "toyta ",
+        "carMaker": "John",
+        "carModel": "444",
+        "carOwner": "John",
+        "carPrice": "33333",
+        "carColor": "black",
+        "discount": 24999.75
+    },
+    {
+        "carLicence": "BZ-123",
         "carMaker": "Skoda",
         "carModel": "Octavia",
         "carOwner": "monsur",
