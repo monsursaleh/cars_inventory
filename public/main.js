@@ -40,7 +40,6 @@ function newCarObj() {
   newcar.discount = discountPrice(price);
   console.log(newcar);
   return newcar;
-  // console.log("car object", newcar);
 }
 
 // adding discountPrice
@@ -140,31 +139,3 @@ function reset() {
 }
 
 btnReset.addEventListener("click", reset);
-
-// diffrent method of doing
-
-// const data = fetch(`http://localhost:3007/license/${search_licence}`)
-//   .then((response) => response.json())
-//   .then((jsonData) => {
-//     console.log(jsonData);
-//     if (jsonData == !null) {
-//       resultLicencse = "Car found in database ";
-//     } else {
-//       resultLicencse = "Car not found in database ";
-//     }
-//   });
-
-// finding the car by license start from here
-// function findCarByLicence() {
-//   const search_licence = document.querySelector("#search-license").value;
-//   for (const car of cars) {
-//     console.log(car["carLicence"]);
-//     if (car["carLicence"] === search_licence) {
-//       const text = `Car Maker is : ${car.carMaker}, and car Model: ${car.carModel}, Owner: ${car.carOwner}`;
-//       searchResult.textContent = text;
-//       return;
-//     } else {
-//       searchResult.textContent = `Car not found now, try later!`;
-//     }
-//   }
-// }

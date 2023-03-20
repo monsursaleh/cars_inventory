@@ -83,5 +83,14 @@
         "carOwner": "monsur",
         "carPrice": "5000",
         "carColor": "Black"
+    },
+    {
+        "carLicence": "MSY-121",
+        "carMaker": "GMG",
+        "carModel": "Tycon",
+        "carOwner": "John",
+        "carPrice": "1222",
+        "carColor": "red",
+        "discount": 1099.8
     }
 ]
