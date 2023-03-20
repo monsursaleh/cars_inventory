@@ -122,12 +122,16 @@ async function findCarByLicence() {
   let data = await response.json();
   console.log(data, typeof data);
   if (data != null) {
-    resultLicencse = "Car found in database";
+    // resultLicencse = "Car found in database";
+    resultLicencse = `Car Maker is ${data.carMaker}, 
+    and car Model ${data.carModel}, 
+    Owner ${data.carOwner}`;
   } else {
     resultLicencse = "Car not found in database";
   }
 
   searchResult.textContent = resultLicencse;
+  discount_Price.textContent = data.discount;
 }
 
 btnSearch.addEventListener("click", findCarByLicence);
@@ -136,6 +140,9 @@ btnSearch.addEventListener("click", findCarByLicence);
 
 function reset() {
   carTable.innerHTML = "";
+  searchResult.textContent = "";
+  discount_Price.textContent = "";
+  window.location.reload();
 }
 
 btnReset.addEventListener("click", reset);

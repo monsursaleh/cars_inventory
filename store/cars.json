@@ -92,5 +92,23 @@
         "carPrice": "1222",
         "carColor": "red",
         "discount": 1099.8
+    },
+    {
+        "carLicence": "test",
+        "carMaker": "toyta ",
+        "carModel": "toyta ",
+        "carOwner": "John",
+        "carPrice": "122",
+        "carColor": "444",
+        "discount": 109.8
+    },
+    {
+        "carLicence": "",
+        "carMaker": "",
+        "carModel": "",
+        "carOwner": "",
+        "carPrice": "",
+        "carColor": "",
+        "discount": 0
     }
 ]
