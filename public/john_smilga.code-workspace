@@ -1,0 +1,13 @@
+{
+  "folders": [
+	{
+		"path": "../.."
+	},
+	{
+		"path": "../../../current_project/cars/cars_project_latest"
+	}
+],
+  "settings": {
+    "liveServer.settings.multiRootWorkspaceName": "john_smilga"
+  }
+}

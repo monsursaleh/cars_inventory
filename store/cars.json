@@ -110,5 +110,14 @@
         "carPrice": "",
         "carColor": "",
         "discount": 0
+    },
+    {
+        "carLicence": "122",
+        "carMaker": "212",
+        "carModel": "121",
+        "carOwner": "job",
+        "carPrice": "33333",
+        "carColor": "red",
+        "discount": 24999.75
     }
 ]
