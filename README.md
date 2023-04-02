@@ -1,9 +1,6 @@
 # Car databse Project Overview
 
-- It will take all cars info as input data and will create new car object and store to car Server in car.json file.
-- By clicking addcar button will create a new car object and push it cars array and JSON file will updated accordingly and from client side a new table raw will be displayed.
-- User can not add iddentical licence twice.
-- User can serach the car from car datbase and it will appear from client side.
+This code appears to be a JavaScript script that implements a web application for managing a car database. It includes functions for creating car objects, adding them to a server, retrieving them from the server, and displaying them in an HTML table. It also includes a function for searching the database by license plate number and displaying the results. Finally, it includes event listeners for buttons that trigger various functions such as adding a new car, searching for a car by license plate number, and resetting the database display.
 
 ## How to run the project locally
 
